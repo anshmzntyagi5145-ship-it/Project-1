@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box Model - Ansh Tyagi</title>
+<style>
+  body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    background:#121212;
+    font-family: Arial, sans-serif;
+    margin:0;
+  }
+  .box-model{
+    width: 520px;
+    background: #f8b28f;
+    border: 2px dashed #555;
+    padding: 50px 70px;
+    position: relative;
+  }
+  .border-layer{
+    background: #fd9696;
+    border: 2px solid #222;
+    padding: 50px 65px;
+    position: relative;
+  }
+  .padding-layer{
+    background: #99d3a5;
+    border: 2px dashed #444;
+    padding: 25px 20px;
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+  }
+  .content-box{
+    background: #8ec6e6;
+    border: 2px solid #111;
+    width: 200px;
+    height: 75px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-weight: bold;
+    font-size: 16px;
+    text-align:center;
+    line-height:1.2;
+  }
+  .label{
+    position:absolute;
+    top:8px;
+    left:12px;
+    font-size:20px;
+    color:#222;
+  }
+  .side-text{
+    font-size:18px;
+    color:#222;
+  }
+  /* top/bottom dashes like in screenshot */
+  .dash{
+    position:absolute;
+    font-size:20px;
+    color:#222;
+  }
+  .dash.top{ top:12px; left:50%; }
+  .dash.bottom{ bottom:12px; left:50%; }
+  .dash.left{ left:12px; top:50%; }
+  .dash.right{ right:12px; top:50%; }
+</style>
+</head>
+<body>
+
+<div class="box-model">
+  <span class="label">margin</span>
+  <span class="dash top">-</span>
+  <span class="dash left">-</span>
+  <span class="dash right">-</span>
+  <span class="dash bottom">-</span>
+
+  <div class="border-layer">
+    <span class="label">border</span>
+    <span class="dash top">-</span>
+    <span class="dash bottom">-</span>
+
+    <div class="padding-layer">
+      <span class="label">padding</span>
+      <span class="dash top">-</span>
+      <span class="dash bottom">-</span>
+      
+      <span class="side-text">1.600</span>
+      <span class="side-text">20</span>
+
+      <div class="content-box">
+        <span>Web Developer</span>
+        <span>Ansh Tyagi</span>
+        <span style="font-weight:400">200×200</span>
+      </div>
+
+      <span class="side-text">20</span>
+      <span class="side-text">1.600</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

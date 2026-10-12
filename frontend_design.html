@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIET Group of Institutions | Muradnagar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0a1931;
+      --navy-2:#112b4e;
+      --gold:#ffcc00;
+      --gold-deep:#f6b800;
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --text:#222;
+      --muted:#5d6574;
+      --line:#e7ebf2;
+      --shadow:0 12px 28px rgba(10,25,49,0.12);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .container{
+      width:min(1200px, calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    header{
+      background:rgba(10,25,49,0.96);
+      backdrop-filter:blur(8px);
+      color:#fff;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+    }
+
+    .brand{
+      font-size:1.3rem;
+      font-weight:700;
+      letter-spacing:0.06em;
+      text-transform:uppercase;
+    }
+
+    .brand span{
+      color:var(--gold);
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#edf3ff;
+      font-size:0.92rem;
+      font-weight:500;
+      transition:0.25s ease;
+      position:relative;
+    }
+
+    nav a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:var(--gold);
+      transition:0.25s ease;
+    }
+
+    nav a:hover{
+      color:#fff;
+    }
+
+    nav a:hover::after{
+      width:100%;
+    }
+
+    .hero{
+      position:relative;
+      min-height:540px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        linear-gradient(rgba(10,25,49,0.55), rgba(10,25,49,0.75)),
+        url('https://www.kiet.edu/uploads/department/CS/1125.jpg') center/cover no-repeat;
+    }
+
+    .hero-content{
+      text-align:center;
+      color:#fff;
+      max-width:900px;
+      padding:32px 16px;
+      position:relative;
+      z-index:1;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:8px 16px;
+      border:1px solid rgba(255,255,255,0.3);
+      border-radius:999px;
+      background:rgba(255,255,255,0.05);
+      margin-bottom:16px;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      font-size:0.72rem;
+      font-weight:600;
+    }
+
+    .hero-content h2{
+      font-size:clamp(2.3rem,4vw,4.1rem);
+      line-height:1.15;
+      margin-bottom:14px;
+      font-weight:800;
+    }
+
+    .hero-content p{
+      font-size:1.08rem;
+      color:rgba(255,255,255,0.9);
+      max-width:700px;
+      margin:0 auto;
+    }
+
+    .hero-actions{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 26px;
+      border-radius:999px;
+      border:none;
+      font-weight:600;
+      font-size:0.96rem;
+      cursor:pointer;
+      transition:0.25s ease;
+      letter-spacing:0.02em;
+    }
+
+    .btn-primary{
+      background:var(--gold);
+      color:var(--navy);
+      box-shadow:0 10px 22px rgba(255,204,0,0.35);
+    }
+
+    .btn-primary:hover{
+      background:var(--gold-deep);
+      transform:translateY(-2px);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.4);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-2px);
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(180px,1fr));
+      gap:18px;
+      margin-top:-42px;
+      position:relative;
+      z-index:10;
+      padding:0 12px;
+    }
+
+    .stat{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px 20px;
+      box-shadow:var(--shadow);
+      text-align:center;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:2rem;
+      color:var(--navy);
+      margin-bottom:6px;
+      font-weight:700;
+    }
+
+    .stat span{
+      color:var(--muted);
+      font-size:0.9rem;
+    }
+
+    section{
+      padding:90px 0;
+    }
+
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:32px;
+    }
+
+    .section-head h2{
+      font-size:clamp(1.8rem,2.5vw,2.8rem);
+      color:var(--navy);
+      font-weight:700;
+    }
+
+    .section-head p{
+      color:var(--muted);
+      max-width:620px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 24px rgba(16,28,52,0.06);
+      transition:0.3s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 18px 36px rgba(16,28,52,0.12);
+    }
+
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-body{
+      padding:22px 18px 24px;
+    }
+
+    .card-body h3{
+      font-size:1.2rem;
+      color:var(--navy);
+      margin-bottom:8px;
+    }
+
+    .card-body p{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .about-wrap{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .about-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:32px;
+      box-shadow:var(--shadow);
+    }
+
+    .about-box h3{
+      font-size:2rem;
+      color:var(--navy);
+      margin-bottom:14px;
+    }
+
+    .about-box p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .feature-list{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(160px,1fr));
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .feature{
+      background:#f9fbff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:16px 14px;
+      font-weight:600;
+      color:var(--navy);
+    }
+
+    .about-visual{
+      background:linear-gradient(135deg, rgba(17,43,78,0.95), rgba(10,25,49,1));
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      min-height:420px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      background-image:
+        linear-gradient(rgba(10,25,49,0.3), rgba(10,25,49,0.5)),
+        url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1');
+      background-size:cover;
+      background-position:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .about-badge{
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(10px);
+      color:#fff;
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:14px;
+      padding:16px 18px;
+      width:min(100%, 330px);
+    }
+
+    .about-badge strong{
+      display:block;
+      font-size:1.8rem;
+      margin-bottom:4px;
+    }
+
+    .map-section{
+      display:grid;
+      grid-template-columns:0.92fr 1.08fr;
+      gap:32px;
+      align-items:center;
+    }
+
+    .info-panel{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:28px 24px;
+      box-shadow:var(--shadow);
+    }
+
+    .info-panel h2{
+      color:var(--navy);
+      margin-bottom:18px;
+      font-size:2rem;
+    }
+
+    .info-panel p{
+      color:var(--muted);
+      margin-bottom:14px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#eaf1ff;
+      border:1px solid #d6e1ff;
+      color:var(--navy);
+      font-size:0.82rem;
+      font-weight:600;
+    }
+
+    .map-box{
+      overflow:hidden;
+      border-radius:20px;
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+
+    .map-box iframe{
+      display:block;
+      width:100%;
+      min-height:420px;
+      border:0;
+    }
+
+    .campus-gallery{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(220px, 1fr));
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .gallery-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 8px 20px rgba(16,28,52,0.05);
+      transition:0.3s ease;
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-6px);
+      box-shadow:0 14px 28px rgba(16,28,52,0.12);
+    }
+
+    .gallery-item img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+    }
+
+    .gallery-item .label{
+      padding:14px 16px;
+      font-weight:600;
+      color:var(--navy);
+    }
+
+    .cta{
+      background:linear-gradient(135deg, var(--navy), var(--navy-2));
+      color:#fff;
+      padding:36px 0;
+      margin-top:18px;
+      border-radius:24px;
+      box-shadow:var(--shadow);
+    }
+
+    .cta-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .cta h3{
+      font-size:clamp(1.5rem,2vw,2rem);
+      margin-bottom:6px;
+    }
+
+    .cta p{
+      color:rgba(255,255,255,0.8);
+    }
+
+    footer{
+      background:#0a1931;
+      color:#b7c1d4;
+      text-align:center;
+      padding:22px 18px 30px;
+      margin-top:40px;
+      font-size:0.88rem;
+    }
+
+    @media (max-width: 900px){
+      .about-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .map-section{
+        grid-template-columns:1fr;
+      }
+
+      .stats{
+        grid-template-columns:repeat(2, minmax(150px,1fr));
+      }
+
+      .campus-gallery{
+        grid-template-columns:repeat(2, minmax(220px, 1fr));
+      }
+    }
+
+    @media (max-width: 640px){
+      .nav-wrap{
+        flex-direction:column;
+        gap:12px;
+      }
+
+      nav{
+        justify-content:center;
+        gap:12px 18px;
+      }
+
+      .hero{
+        min-height:470px;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      .feature-list{
+        grid-template-columns:1fr;
+      }
+
+      .campus-gallery{
+        grid-template-columns:1fr;
+      }
+
+      .section-head{
+        align-items:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">KIET <span>Group</span></div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#campus">Campus</a>
+        <a href="#location">Location</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Excellence in Education</div>
+        <h2>KIET Group of Institutions</h2>
+        <p>Delhi-NCR, Meerut Road, Muradnagar, Ghaziabad - 201206</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#campus">Explore Campus</a>
+          <a class="btn btn-secondary" href="#location">View Location</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats">
+      <div class="stat">
+        <strong>25+</strong>
+        <span>Years of Excellence</span>
+      </div>
+      <div class="stat">
+        <strong>NAAC</strong>
+        <span>A Grade Accredited</span>
+      </div>
+      <div class="stat">
+        <strong>16K+</strong>
+        <span>Students</span>
+      </div>
+      <div class="stat">
+        <strong>50+</strong>
+        <span>Programs Offered</span>
+      </div>
+    </div>
+
+    <section id="campus" class="container">
+      <div class="section-head">
+        <h2>Campus Glimpses</h2>
+        <p>Discover modern infrastructure, innovation-driven learning, and a vibrant student community at KIET Muradnagar.</p>
+      </div>
+
+      <div class="campus-gallery">
+        <div class="gallery-item">
+          <img src="https://www.kiet.edu/uploads/department/CS/1125.jpg" alt="KIET Academic Block">
+          <div class="label">Academic Block</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80" alt="Library and labs">
+          <div class="label">Library & Labs</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80" alt="Campus life">
+          <div class="label">Student Life</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1562771382-9e0f7d7f3d8d?auto=format&fit=crop&w=900&q=80" alt="Campus environment">
+          <div class="label">Green Campus</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="container">
+      <div class="about-wrap">
+        <div class="about-box">
+          <h3>Why KIET?</h3>
+          <p>KIET Group of Institutions is a premier educational destination committed to shaping future-ready professionals through quality teaching, innovation, and holistic development.</p>
+          <p>From engineering education to practical exposure, KIET focuses on building skills that lead to academic excellence and real-world impact.</p>
+
+          <div class="feature-list">
+            <div class="feature">Industry Connect</div>
+            <div class="feature">Career Guidance</div>
+            <div class="feature">Innovation Labs</div>
+            <div class="feature">Student Support</div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-badge">
+            <strong>1998</strong>
+            <span>Established to empower students with excellence, ethics, and innovation.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="container">
+      <div class="map-section">
+        <div class="info-panel">
+          <h2>Find Us on Map</h2>
+          <p><strong>Address:</strong> Delhi-NCR, Meerut Rd, Muradnagar, Ghaziabad, UP 201206</p>
+          <p>Located on NH-58 with easy access from Ghaziabad Railway Station, Delhi NCR, and nearby city hubs. KIET offers a peaceful academic environment with excellent connectivity.</p>
+
+          <div class="tags">
+            <span class="tag">📍 28.753218, 77.497115</span>
+            <span class="tag">☎️ 1800-3130056</span>
+            <span class="tag">🌐 kiet.edu</span>
+          </div>
+
+          <div style="margin-top:20px;">
+            <a href="https://www.google.com/maps/dir//KIET+Group+of+Institutions+Muradnagar" target="_blank" class="btn btn-primary">Get Directions →</a>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <iframe
+            src="https://maps.google.com/maps?q=KIET%20Group%20of%20Institutions%20Muradnagar%20Ghaziabad%2028.753218,77.497115&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="container">
+          <div class="cta-inner">
+            <div>
+              <h3>Ready to join KIET?</h3>
+              <p>Build your future with a campus that inspires innovation and excellence.</p>
+            </div>
+            <a class="btn btn-primary" href="https://www.kiet.edu" target="_blank">Visit Official Website</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 KIET Group of Institutions, Muradnagar | Designed by 2630btech0760@kiet.edu
+  </footer>
+
+</body>
+</html>

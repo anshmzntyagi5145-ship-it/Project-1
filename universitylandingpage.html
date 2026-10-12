@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>KIET College</title>
+<style>
+body{font-family:Arial; margin:0; text-align:center}
+header{background:#0b2a5b; color:white; padding:20px}
+.hero{padding:60px 20px; background:#f2f5ff}
+.hero h1{color:#0b2a5b}
+button{padding:10px 20px; background:red; color:white; border:none; border-radius:5px; cursor:pointer}
+.card{border:1px solid #ccc; padding:15px; margin:15px; display:inline-block; width:200px; border-radius:10px}
+footer{background:#0b2a5b; color:white; padding:15px; margin-top:30px}
+</style>
+</head>
+<body>
+
+<header>
+  <h2>KIET Group of Institutions</h2>
+</header>
+
+<div class="hero">
+  <h1>Welcome to KIET Ghaziabad</h1>
+  <p>Best Engineering College in Delhi NCR</p>
+  <button onclick="apply()">Apply Now</button>
+</div>
+
+<div>
+  <div class="card"><h3>B.Tech</h3><p>CSE, AI, IT, ECE</p></div>
+  <div class="card"><h3>MBA</h3><p>Business Management</p></div>
+  <div class="card"><h3>Pharmacy</h3><p>B.Pharm, M.Pharm</p></div>
+</div>
+
+<div style="margin-top:20px">
+  <input id="name" placeholder="Enter Your Name">
+  <button onclick="submitForm()">Submit</button>
+</div>
+
+<footer>© 2026 KIET Ghaziabad</footer>
+
+<script>
+function apply(){
+  alert("Admissions Open 2026-27");
+}
+function submitForm(){
+  let n = document.getElementById("name").value;
+  if(n==""){alert("Naam likho");} 
+  else{alert("Thank you " + n);}
+}
+</script>
+
+</body>
+</html>

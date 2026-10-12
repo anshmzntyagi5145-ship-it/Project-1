@@ -97,8 +97,7 @@ button {
 .fade-in {
   animation: fadeIn 0.6s ease-in-out forwards;
 }
-  font-size: 16px;
-} /* Button Hover */
+ /* Button Hover */
 button:hover {
   background-color: #3949ab;
 }

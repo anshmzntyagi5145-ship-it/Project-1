@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ChatGPT</title>
+<style>
+body{margin:0;background:#343541;color:white;font-family:Arial}
+#chat{height:85vh;padding:20px;overflow:auto}
+.msg{padding:12px;margin:10px;background:#444654;border-radius:8px}
+input{width:80%;padding:15px;background:#40414f;color:white;border:0}
+button{padding:15px;background:#19c37d;color:white;border:0}
+</style>
+</head>
+
+<body>
+<div id="chat"><div class="msg">🤖 Hello! How can I help?</div></div>
+
+<input id="input" placeholder="Message...">
+<button onclick="send()">Send</button>
+
+<script>
+function send(){
+ let i=document.getElementById("input");
+ if(!i.value)return;
+ chat.innerHTML+=`<div class="msg">👤 ${i.value}</div>`;
+ chat.innerHTML+=`<div class="msg">🤖 You said: ${i.value}</div>`;
+ i.value="";
+}
+</script>
+</body>
+</html>

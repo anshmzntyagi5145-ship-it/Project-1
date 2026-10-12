@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Courses</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            background-color: #155662;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .container{
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+        }
+        h1{
+            color: #788a2e;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        .cards{
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .card{
+            background-color: #ffe6f0;
+            border-radius: 10px;
+            padding: 25px 20px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            border: 2px solid #fff;
+        }
+        .card h2{
+            color: #3a5ac3;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .card p{
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .card button{
+            background-color: #1a5bff;
+            color: white;
+            border: none;
+            padding: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .card button:hover{
+            background-color: #0d47d4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MY COURSES</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>HTML</h2>
+                <p>Learn the basics of HTML and create your first webpage.</p>
+                <button>Start Course</button>
+            </div>
+            <div class="card">
+                <h2>CSS</h2>
+                <p>Learn to style, layout and make beautiful webpage designs.</p>
+                <button>Start Course</button>
+            </div>
+            <div class="card">
+                <h2>JavaScript</h2>
+                <p>Learn JavaScript and make your webpages interactive.</p>
+                <button>Start Course</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
